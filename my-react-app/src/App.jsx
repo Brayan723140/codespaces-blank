@@ -1,38 +1,52 @@
-//import react
+//Import react
 import React from 'react'
 
-//import images
+//Import images
 import logo from './assets/Abstraction.png'
 import weblogo from './assets/weblogo.png'
+import google from './assets/google.png'
+import facebook from './assets/facebook.png'
+import lock from './assets/lock.png'
+//CSS Import/Link
+import './App.css';
 
-//import the CSS
-import './App.css'
 //Declaring the app function
 const App = () => {
   //HTML to be returned
   return (
     <div className='page'>
-
-    {/*left side of screen*/}
-
+      {/*Left side of the screen*/}
       <div className='left'>
-        <img src={weblogo} alt='logo' width='135px' height='117px' />
+        <img src={weblogo} alt='logo' width='135px' height='117px'></img>
         <h3>Getting Started With VR Creation</h3>
-        <img src={logo} alt='logo' width='630.49px' height='673.93px' />
+        <img src={logo} alt='logo' width='630.49px' height='673.97px'></img>
       </div>
 
-    {/*right side of screen*/}
+      {/*Right side of the screen*/}
       <div className='right'>
-        //Language select
+
         <select name="language" id="lang">
-          <option value="En">English (UK) </option>
+          <option value="En">English (UK)</option>
         </select>
 
-        //Actual form from the right side of the screen//Startinh from "Create Account"
         <form>
-
+          <h2>Create Account</h2>
+          <div className='buttonRow'>
+            <button><img src={google} width='23px' height='27px'></img>Signup with Google</button>
+            <button><img src={facebook} width='24px' height='24px'></img>Signup with Facebook</button>
+          </div>
+          <p className='or'>- OR -</p>
+          <div className='inputs'>
+            <input placeholder='Full Name' type='text' required></input>
+            
+            <input placeholder='Email' type='email' required></input>
+          
+            <div className='passwordBox'>
+              <input placeholder='Password' type='password' required></input>
+              <img src={lock}></img>
+            </div>
+          </div>
         </form>
-      
       </div>
     </div>
   )
